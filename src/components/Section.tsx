@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Fade from 'react-awesome-reveal'
 
 interface types {
     title: string
@@ -7,30 +8,37 @@ interface types {
     rightButtonText: string
 }
 
-const Section: React.FC<types> = ({url, title, leftButtonText, rightButtonText=''}) => {
+const Section: React.FC<types> = ({
+    url,
+    title,
+    leftButtonText,
+    rightButtonText = '',
+}) => {
     return (
         <Wrap
             bgImage={url}
             className="w-screen h-screen bg-center bg-no-repeat bg-cover"
         >
-            <ItemText className="flex flex-col items-center justify-center">
-                <h1 className="text-6xl font-semibold">{title}</h1>
-                <p className="text-3xl font-light">
-                    Order Online for Touchless Delivery
-                </p>
-            </ItemText>
-            <ButtonGroup className="flex flex-col items-center justify-between mb-40">
-                <Buttons className="flex justify-center">
-                    <LeftButton>{leftButtonText}</LeftButton>
-                    {rightButtonText !== '' && (
-                        <RightButton>{rightButtonText}</RightButton>
-                    )}
-                </Buttons>
-                <DownArrow
-                    className="animate-bounce"
-                    src="/images/down-arrow.svg"
-                />
-            </ButtonGroup>
+            <Fade>
+                <ItemText className="flex flex-col items-center justify-center">
+                    <h1 className="text-6xl font-semibold">{title}</h1>
+                    <p className="text-3xl font-light">
+                        Order Online for Touchless Delivery
+                    </p>
+                </ItemText>
+                <ButtonGroup className="flex flex-col items-center justify-between mb-40">
+                    <Buttons className="flex justify-center">
+                        <LeftButton>{leftButtonText}</LeftButton>
+                        {rightButtonText !== '' && (
+                            <RightButton>{rightButtonText}</RightButton>
+                        )}
+                    </Buttons>
+                    <DownArrow
+                        className="animate-bounce"
+                        src="/images/down-arrow.svg"
+                    />
+                </ButtonGroup>
+            </Fade>
         </Wrap>
     )
 }

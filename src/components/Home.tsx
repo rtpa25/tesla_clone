@@ -42,8 +42,8 @@ function Home() {
             <Section
                 title="Accessories"
                 url="/images/accessories.jpg"
-                leftButtonText="buy now" 
-                rightButtonText=''            
+                leftButtonText="buy now"
+                rightButtonText=""
             />
         </div>
     )
