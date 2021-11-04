@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import Fade from 'react-awesome-reveal'
-
+const Fade = require('react-reveal/Fade')
 interface types {
     title: string
     url: string
@@ -19,7 +18,7 @@ const Section: React.FC<types> = ({
             bgImage={url}
             className="w-screen h-screen bg-center bg-no-repeat bg-cover"
         >
-            <Fade>
+            <Fade bottom>
                 <ItemText className="flex flex-col items-center justify-center">
                     <h1 className="text-6xl font-semibold">{title}</h1>
                     <p className="text-3xl font-light">
